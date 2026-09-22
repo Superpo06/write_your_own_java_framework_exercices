@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="859ffbfa-c631-4a6e-9ace-12bebf826f17" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/google-java-format.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/markdown.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/write_your_own_java_framework_exercices.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/injector/src/main/java/com/github/forax/framework/injector/InjectorRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/injector/src/main/java/com/github/forax/framework/injector/InjectorRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/injector/src/test/java/com/github/forax/framework/injector/InjectorRegistryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/injector/src/test/java/com/github/forax/framework/injector/InjectorRegistryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mapper/src/main/java/com/github/forax/framework/mapper/JSONWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/mapper/src/main/java/com/github/forax/framework/mapper/JSONWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mapper/src/test/java/com/github/forax/framework/mapper/JSONWriterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/mapper/src/test/java/com/github/forax/framework/mapper/JSONWriterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,85 +23,85 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Superpo06"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Superpo06&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:Superpo06/write_your_own_java_framework_exercices.git",
-    "accountId": "ea26a607-0d49-4891-8b93-312516211034"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:Superpo06/write_your_own_java_framework_exercices.git&quot;,
+    &quot;accountId&quot;: &quot;ea26a607-0d49-4891-8b93-312516211034&quot;
   }
-}]]></component>
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0001519621874877" />
-      <entry key="S2" value="1.112015716379533" />
-      <entry key="S5" value="1.5447001161581202" />
-      <entry key="S10" value="2.566995588707155" />
-      <entry key="S30" value="6.098625518234285" />
-      <entry key="S60" value="8.903382488048722" />
-      <entry key="M2" value="11.526694691002099" />
-      <entry key="M5" value="15.167337891293064" />
-      <entry key="M10" value="24.4706274352357" />
-      <entry key="M15" value="38.04906396488383" />
-      <entry key="M30" value="84.56101340426854" />
-      <entry key="H1" value="158.93782438937745" />
-      <entry key="H2" value="236.13695970739735" />
-      <entry key="H4" value="294.20756396131947" />
-      <entry key="D1" value="357.3716046507289" />
-      <entry key="W1" value="369.8649827489508" />
+      <entry key="MS100" value="1.7422617853145246" />
+      <entry key="MS500" value="1.94213180298877" />
+      <entry key="S2" value="2.0124694853204526" />
+      <entry key="S5" value="2.2711341972901984" />
+      <entry key="S10" value="2.7951421653655144" />
+      <entry key="S30" value="5.133943441999942" />
+      <entry key="S60" value="7.569473268470309" />
+      <entry key="M2" value="10.04241071964629" />
+      <entry key="M5" value="15.020970977434212" />
+      <entry key="M10" value="26.40998320383136" />
+      <entry key="M15" value="40.34340088153523" />
+      <entry key="M30" value="86.47954037064126" />
+      <entry key="H1" value="178.0817605495164" />
+      <entry key="H2" value="316.15071665683905" />
+      <entry key="H4" value="457.2021269649262" />
+      <entry key="D1" value="652.2176493235419" />
+      <entry key="W1" value="696.2821477324725" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="6.659520158334634E-75" />
-      <entry key="S2" value="4.515817694124986E-19" />
-      <entry key="S5" value="8.007313162159697E-8" />
-      <entry key="S10" value="4.78247160004155E-4" />
-      <entry key="S30" value="0.16166812958842552" />
-      <entry key="S60" value="0.6958764602236729" />
-      <entry key="M2" value="1.45213032291168" />
-      <entry key="M5" value="2.6435005246818797" />
-      <entry key="M10" value="4.6652008062356485" />
-      <entry key="M15" value="6.816954952361966" />
-      <entry key="M30" value="12.55607955452544" />
-      <entry key="H1" value="19.654907984231198" />
-      <entry key="H2" value="25.77624893061285" />
-      <entry key="H4" value="29.90240791125043" />
-      <entry key="D1" value="34.072347029488114" />
-      <entry key="W1" value="34.86540941722882" />
+      <entry key="MS100" value="8.345392970512105E-42" />
+      <entry key="MS500" value="6.08540319733338E-9" />
+      <entry key="S2" value="0.008832270113475406" />
+      <entry key="S5" value="0.15092686731232166" />
+      <entry key="S10" value="0.4053205128594007" />
+      <entry key="S30" value="1.2479933107087908" />
+      <entry key="S60" value="2.096319062236432" />
+      <entry key="M2" value="2.9098889872366334" />
+      <entry key="M5" value="5.03251536546445" />
+      <entry key="M10" value="10.196444338463182" />
+      <entry key="M15" value="15.723406640476679" />
+      <entry key="M30" value="29.945685337840082" />
+      <entry key="H1" value="49.25029683417435" />
+      <entry key="H2" value="70.5147772986952" />
+      <entry key="H4" value="88.53260415320287" />
+      <entry key="D1" value="110.52671319280297" />
+      <entry key="W1" value="115.19205568673804" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.0040440036087553794" />
-      <entry key="MS500" value="0.332264867634146" />
-      <entry key="S2" value="0.858460334321062" />
-      <entry key="S5" value="1.4191055322113044" />
-      <entry key="S10" value="2.4886741087314026" />
-      <entry key="S30" value="6.206457335513025" />
-      <entry key="S60" value="9.551081969941146" />
-      <entry key="M2" value="12.941543833714395" />
-      <entry key="M5" value="17.78735729632093" />
-      <entry key="M10" value="29.113542693034336" />
-      <entry key="M15" value="44.84139791839073" />
-      <entry key="M30" value="97.0879578756974" />
-      <entry key="H1" value="178.56495633853672" />
-      <entry key="H2" value="261.89271340119575" />
-      <entry key="H4" value="324.0973091751143" />
-      <entry key="D1" value="391.4414127035167" />
-      <entry key="W1" value="404.7300174909304" />
+      <entry key="MS100" value="0.7980086646025168" />
+      <entry key="MS500" value="1.256317294534764" />
+      <entry key="S2" value="1.7459433157838247" />
+      <entry key="S5" value="2.212819494841979" />
+      <entry key="S10" value="3.023022468043878" />
+      <entry key="S30" value="6.260240488879819" />
+      <entry key="S60" value="9.57494079651769" />
+      <entry key="M2" value="12.889784518371524" />
+      <entry key="M5" value="20.00385985603411" />
+      <entry key="M10" value="36.55051801572664" />
+      <entry key="M15" value="56.00520269399731" />
+      <entry key="M30" value="116.35819452462452" />
+      <entry key="H1" value="227.2699356646026" />
+      <entry key="H2" value="386.61690751164815" />
+      <entry key="H4" value="545.7024780333442" />
+      <entry key="D1" value="762.7372815423396" />
+      <entry key="W1" value="811.473138695621" />
     </decayedShown>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3JfqI8h9WKV3Obbjb3mWfWaDxrV" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -121,6 +113,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.InjectorRegistryTest.executor": "Run",
     "JUnit.JSONWriterTest (1).executor": "Run",
     "JUnit.JSONWriterTest$Q1 (1).executor": "Run",
     "JUnit.JSONWriterTest$Q1.executor": "Run",
@@ -153,7 +146,22 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.JSONWriterTest (1)">
+  <component name="RunManager" selected="JUnit.InjectorRegistryTest">
+    <configuration name="InjectorRegistryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="injector" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.forax.framework.injector.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.github.forax.framework.injector" />
+      <option name="MAIN_CLASS_NAME" value="com.github.forax.framework.injector.InjectorRegistryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="JSONWriterTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mapper" />
       <extension name="coverage">
@@ -214,28 +222,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JSONWriterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.github.forax.framework.mapper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.github.forax.framework.mapper" />
-      <option name="MAIN_CLASS_NAME" value="com.github.forax.framework.mapper.JSONWriterTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.InjectorRegistryTest" />
         <item itemvalue="JUnit.JSONWriterTest (1)" />
         <item itemvalue="JUnit.JSONWriterTest$Q2" />
         <item itemvalue="JUnit.JSONWriterTest$Q1 (1)" />
         <item itemvalue="JUnit.JSONWriterTest$Q1" />
-        <item itemvalue="JUnit.JSONWriterTest" />
       </list>
     </recent_temporary>
   </component>
@@ -255,6 +248,7 @@
       <option name="presentableId" value="Default" />
       <updated>1790062390880</updated>
       <workItem from="1790062392349" duration="9158000" />
+      <workItem from="1790077012051" duration="9267000" />
     </task>
     <servers />
   </component>
