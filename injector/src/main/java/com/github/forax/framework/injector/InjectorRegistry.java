@@ -1,6 +1,7 @@
 package com.github.forax.framework.injector;
 
 import java.beans.PropertyDescriptor;
+import java.lang.reflect.Constructor;
 import java.util.*;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -46,16 +47,38 @@ public final class InjectorRegistry {
     public <T> void registerProviderClass(Class<T> type, Class<? extends T> clazz) {
         Objects.requireNonNull(type);
         Objects.requireNonNull(clazz);
-        var constructor = Utils.defaultConstructor(clazz);
+        var constructor = InjectorRegistry.findConstructor(clazz);
         var properties = InjectorRegistry.findInjectableProperties(clazz);
         registerProvider(type, () -> {
-            var instance = Utils.newInstance(constructor);
+            var args = Arrays.stream(constructor.getParameterTypes()).map(this::lookupInstance).toArray();
+            var instance = Utils.newInstance(constructor, args);
             for(var property : properties){
                 var setter = property.getWriteMethod();
                 var value = lookupInstance(property.getPropertyType());
                 Utils.invokeMethod(instance, setter, value);
             }
-            return instance;
+            return type.cast(instance);
         });
+    }
+
+    private <T> void registerProviderClassInternal(Class<T> type) {
+        registerProviderClass(type, type);
+    }
+
+    public void registerProviderClass(Class<?> type) {
+        Objects.requireNonNull(type);
+        registerProviderClassInternal(type);
+    }
+
+    private static <T> Constructor<?> findConstructor(Class<? extends T> type) {
+        var constructors = type.getConstructors();
+        var foundedConstructors = Arrays.stream(constructors)
+                .filter(constructor -> {
+                    return constructor.isAnnotationPresent(Inject.class);}).toList();
+        return switch (foundedConstructors.size()) {
+            case 0 -> Utils.defaultConstructor(type);
+            case 1->  foundedConstructors.getFirst();
+            default -> throw new IllegalStateException("Either no or multiple constructor candidates found");
+        };
     }
 }
