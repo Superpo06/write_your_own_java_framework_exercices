@@ -1,10 +1,7 @@
 package com.github.forax.framework.mapper;
 
 import java.beans.PropertyDescriptor;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Objects;
-import java.util.StringJoiner;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -12,10 +9,9 @@ public final class JSONWriter {
   static class GeneratorCache extends ClassValue<Generator> {
     @Override
     protected Generator computeValue(Class<?> type) {
-      var beanInfo = Utils.beanInfo(type);
-      var generators = Arrays.stream(beanInfo.getPropertyDescriptors())
-          .filter(property -> !property.getName().equals("class"))
-          .filter(property -> property.getReadMethod() != null)
+      var properties = type.isRecord() ? recordProperties(type) : beanProperties(type);
+
+      var generators = properties.stream()
           .<Generator>map(property -> {
             var name = property.getName();
             var getter = property.getReadMethod();
@@ -70,5 +66,28 @@ public final class JSONWriter {
     if (isPresent != null) {
       throw new IllegalStateException("type " + type.getName() + " already configured");
     }
+  }
+
+  private static List<PropertyDescriptor> beanProperties(Class<?> type) {
+    return Arrays.stream(Utils.beanInfo(type).getPropertyDescriptors())
+        .filter(property -> !property.getName().equals("class"))
+        .filter(property -> property.getReadMethod() != null)
+        .toList();
+  }
+
+  private static List<PropertyDescriptor> recordProperties(Class<?> type) {
+    return Arrays.stream(type.getRecordComponents())
+        .map(component -> {
+          try {
+            return new PropertyDescriptor(
+                component.getName(),
+                component.getAccessor(),
+                null
+            );
+          } catch (Exception e) {
+            throw new IllegalStateException(e);
+          }
+        })
+        .toList();
   }
 }

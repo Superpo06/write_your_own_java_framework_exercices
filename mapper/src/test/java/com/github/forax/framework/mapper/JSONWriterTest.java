@@ -173,7 +173,7 @@ public class JSONWriterTest {
       return lastName;
     }
   }
-/*
+
   @Nested
   public class Q6 {
     @Test @Tag("Q6")
@@ -249,5 +249,4 @@ public class JSONWriterTest {
     }
 
   }  // end of Q7
- */
 }
