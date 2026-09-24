@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="859ffbfa-c631-4a6e-9ace-12bebf826f17" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/injector/src/main/java/com/github/forax/framework/injector/InjectorRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/injector/src/main/java/com/github/forax/framework/injector/InjectorRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/injector/src/test/java/com/github/forax/framework/injector/InjectorRegistryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/injector/src/test/java/com/github/forax/framework/injector/InjectorRegistryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mapper/src/main/java/com/github/forax/framework/mapper/JSONWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/mapper/src/main/java/com/github/forax/framework/mapper/JSONWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mapper/src/test/java/com/github/forax/framework/mapper/JSONWriterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/mapper/src/test/java/com/github/forax/framework/mapper/JSONWriterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,61 +39,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="4.982355697207727E-211" />
-      <entry key="MS500" value="8.69935283878585E-43" />
-      <entry key="S2" value="3.054026252692884E-11" />
-      <entry key="S5" value="6.258251298178997E-5" />
-      <entry key="S10" value="0.008617825726015774" />
-      <entry key="S30" value="0.38362657181640936" />
-      <entry key="S60" value="1.2923139253851315" />
-      <entry key="M2" value="2.8281178062905554" />
-      <entry key="M5" value="7.971382916561955" />
-      <entry key="M10" value="20.076329450019777" />
-      <entry key="M15" value="34.10917600299279" />
-      <entry key="M30" value="79.27514760166359" />
-      <entry key="H1" value="170.92878574594204" />
-      <entry key="H2" value="318.689167275085" />
-      <entry key="H4" value="480.5417557833716" />
-      <entry key="D1" value="718.5104694444507" />
-      <entry key="W1" value="774.1838498691562" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0000184369920238" />
+      <entry key="S2" value="1.1345202289705154" />
+      <entry key="S5" value="1.8596549503837558" />
+      <entry key="S10" value="2.6430855824997654" />
+      <entry key="S30" value="4.615823737087421" />
+      <entry key="S60" value="6.729116824744266" />
+      <entry key="M2" value="8.96593753568854" />
+      <entry key="M5" value="12.490822598392047" />
+      <entry key="M10" value="19.581882364901496" />
+      <entry key="M15" value="29.494988766298885" />
+      <entry key="M30" value="67.75199746864972" />
+      <entry key="H1" value="154.6329746521357" />
+      <entry key="H2" value="303.59354241181455" />
+      <entry key="H4" value="473.74088585562254" />
+      <entry key="D1" value="732.4467694179714" />
+      <entry key="W1" value="794.0927749149712" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0000000053634186" />
-      <entry key="S10" value="1.0000732353643542" />
-      <entry key="S30" value="1.0418475524458708" />
-      <entry key="S60" value="1.21205906171209" />
-      <entry key="M2" value="1.67821579983548" />
-      <entry key="M5" value="3.989258650241588" />
-      <entry key="M10" value="8.74369653222124" />
-      <entry key="M15" value="13.737904601625093" />
-      <entry key="M30" value="28.366815947247677" />
-      <entry key="H1" value="51.41707113318978" />
-      <entry key="H2" value="78.84190460536443" />
-      <entry key="H4" value="103.19840853830318" />
-      <entry key="D1" value="134.11911394612383" />
-      <entry key="W1" value="140.83220705947622" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="1.403851095349725E-231" />
+      <entry key="S2" value="1.9356652849121947E-58" />
+      <entry key="S5" value="8.21735604209971E-24" />
+      <entry key="S10" value="2.8665931071743874E-12" />
+      <entry key="S30" value="1.4205461669163566E-4" />
+      <entry key="S60" value="0.011919590641702414" />
+      <entry key="M2" value="0.11063787841448497" />
+      <entry key="M5" value="0.6507357250281808" />
+      <entry key="M10" value="2.779633038863293" />
+      <entry key="M15" value="6.115381136345866" />
+      <entry key="M30" value="18.599769521830794" />
+      <entry key="H1" value="41.586514537239175" />
+      <entry key="H2" value="71.07291715098651" />
+      <entry key="H4" value="98.2971683451194" />
+      <entry key="D1" value="133.81040540302718" />
+      <entry key="W1" value="141.63509012390202" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.004157696025208437" />
-      <entry key="MS500" value="0.3340185195975249" />
-      <entry key="S2" value="0.7602258567844121" />
-      <entry key="S5" value="0.8962047377026521" />
-      <entry key="S10" value="0.9551336152879953" />
-      <entry key="S30" value="1.3927253920405587" />
-      <entry key="S60" value="2.4642143698360814" />
-      <entry key="M2" value="4.464599483111698" />
-      <entry key="M5" value="11.910769832801915" />
-      <entry key="M10" value="28.758661747196946" />
-      <entry key="M15" value="47.78109361520375" />
-      <entry key="M30" value="107.57220093428617" />
-      <entry key="H1" value="222.2794660240953" />
-      <entry key="H2" value="397.47707624762853" />
-      <entry key="H4" value="583.7031847842812" />
-      <entry key="D1" value="852.6211787193963" />
-      <entry key="W1" value="915.0147844638075" />
+      <entry key="MS100" value="0.45062523130541515" />
+      <entry key="MS500" value="0.852652177459762" />
+      <entry key="S2" value="1.0898656554102408" />
+      <entry key="S5" value="1.8270299362065954" />
+      <entry key="S10" value="2.615837019221711" />
+      <entry key="S30" value="4.571917125111105" />
+      <entry key="S60" value="6.690243694355084" />
+      <entry key="M2" value="9.032975140783984" />
+      <entry key="M5" value="13.109983596578674" />
+      <entry key="M10" value="22.32775313657052" />
+      <entry key="M15" value="35.57053149029096" />
+      <entry key="M30" value="86.30013520741157" />
+      <entry key="H1" value="196.162682136394" />
+      <entry key="H2" value="374.6162058320928" />
+      <entry key="H4" value="572.0020410757595" />
+      <entry key="D1" value="866.2486584980142" />
+      <entry key="W1" value="935.7265666327942" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -108,43 +108,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.InjectorRegistryTest.executor": "Run",
-    "JUnit.JSONWriterTest (1).executor": "Run",
-    "JUnit.JSONWriterTest$Q1 (1).executor": "Run",
-    "JUnit.JSONWriterTest$Q1.executor": "Run",
-    "JUnit.JSONWriterTest$Q2.executor": "Run",
-    "JUnit.JSONWriterTest.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "master",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.fileTypes",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.InjectorRegistryTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.JSONWriterTest (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.JSONWriterTest$Q1 (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.JSONWriterTest$Q1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.JSONWriterTest$Q2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.JSONWriterTest.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="JUnit.InjectorRegistryTest">
+}</component>
+  <component name="RunManager" selected="JUnit.JSONWriterTest (1)">
     <configuration name="InjectorRegistryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="injector" />
       <extension name="coverage">
@@ -222,8 +222,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.InjectorRegistryTest" />
         <item itemvalue="JUnit.JSONWriterTest (1)" />
+        <item itemvalue="JUnit.InjectorRegistryTest" />
         <item itemvalue="JUnit.JSONWriterTest$Q2" />
         <item itemvalue="JUnit.JSONWriterTest$Q1 (1)" />
         <item itemvalue="JUnit.JSONWriterTest$Q1" />
@@ -247,10 +247,23 @@
       <updated>1790062390880</updated>
       <workItem from="1790062392349" duration="9158000" />
       <workItem from="1790077012051" duration="11721000" />
+      <workItem from="1790153752166" duration="57000" />
+      <workItem from="1790278257805" duration="1855000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
