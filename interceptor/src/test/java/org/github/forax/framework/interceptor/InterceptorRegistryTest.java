@@ -21,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class InterceptorRegistryTest {
-  /*
+
   @Nested
   public class Q1 {
 
@@ -134,7 +134,7 @@ public class InterceptorRegistryTest {
     @Retention(RUNTIME)
     @Target(METHOD)
     @interface Tagged2 { }
-
+//
 //    @Test @Tag("Q2")
 //    public void findAdvices() throws NoSuchMethodException {
 //      class EmptyAroundAdvice implements AroundAdvice {
@@ -604,6 +604,4 @@ public class InterceptorRegistryTest {
       assertEquals("-hello-", foo.hello("hello"));
     }
   }  // end Q7
-
-  */
 }
