@@ -48,7 +48,7 @@ public final class ORM {
       return beanType;
     }
     throw new IllegalArgumentException("invalid type argument " + typeArgument + " for repository interface " + repositoryType.getName());
-  }toEntityClass
+  }
 
   private static class UncheckedSQLException extends RuntimeException {
     @Serial
@@ -66,20 +66,23 @@ public final class ORM {
   // --- do not change the code above
 
   private static final ThreadLocal<Connection> CONNECTION = new ThreadLocal<>();
+
   public static void transaction(DataSource dataSource, TransactionBlock block) throws SQLException {
     Objects.requireNonNull(dataSource);
     Objects.requireNonNull(block);
 
-    try(var connection = dataSource.getConnection()) {
+    try (var connection = dataSource.getConnection()) {
       connection.setAutoCommit(false);
       CONNECTION.set(connection);
-      try{
+      try {
         block.run();
         connection.commit();
       } catch (SQLException e) {
-          connection.rollback();
-          throw e;
-        }
+        connection.rollback();
+        throw e;
+      } catch (UncheckedSQLException e) {
+        throw new SQLException(e.getCause());
+      }
     } finally {
       CONNECTION.remove();
     }
@@ -87,7 +90,7 @@ public final class ORM {
 
   static Connection currentConnection() {
     var connection = CONNECTION.get();
-    if(connection == null) {
+    if (connection == null) {
       throw new IllegalStateException("No current connexion");
     }
     return connection;
@@ -96,23 +99,21 @@ public final class ORM {
   static void createTable(Class<?> beanType) throws SQLException {
     Objects.requireNonNull(beanType);
     var connection = currentConnection();
-
     var beanInfo = Utils.beanInfo(beanType);
     var tableName = findTableName(beanType);
-
     var Query = "CREATE TABLE " + tableName + " " +
         Arrays.stream(beanInfo.getPropertyDescriptors())
-        .filter(property -> !property.getName().equals("class"))
-        .map(property -> {
-          var columnName = findColumnName(property);
-          return columnName + " "
-            + findSQLType(property.getPropertyType())
-            + generatedValue(property)
-            + id(property, columnName);
-        })
-            .collect(Collectors.joining(",\n", "(",")"));
+            .filter(property -> !property.getName().equals("class"))
+            .map(property -> {
+              var columnName = findColumnName(property);
+              return columnName + " "
+                  + findSQLType(property.getPropertyType())
+                  + generatedValue(property)
+                  + id(property, columnName);
+            })
+            .collect(Collectors.joining(",\n", "(", ")"));
 
-    try(var statement = connection.createStatement()) {
+    try (var statement = connection.createStatement()) {
       statement.executeUpdate(Query);
     }
     connection.commit();
@@ -127,7 +128,7 @@ public final class ORM {
   static String findColumnName(PropertyDescriptor propertyDescriptor) {
     var name = propertyDescriptor.getName();
     var getter = propertyDescriptor.getReadMethod();
-    if(getter == null) {
+    if (getter == null) {
       return name;
     }
     var column = getter.getAnnotation(Column.class);
@@ -139,48 +140,80 @@ public final class ORM {
     return SQLType + (type.isPrimitive() ? " NOT NULL" : "");
   }
 
-  static String generatedValue(PropertyDescriptor propertyDescriptor){
+  static String generatedValue(PropertyDescriptor propertyDescriptor) {
     var getter = propertyDescriptor.getReadMethod();
-    if(getter == null){
+    if (getter == null) {
       return "";
     }
     return getter.isAnnotationPresent(GeneratedValue.class) ? " AUTO_INCREMENT" : "";
   }
 
-  static String id(PropertyDescriptor propertyDescriptor, String columnName){
+  static String id(PropertyDescriptor propertyDescriptor, String columnName) {
     var getter = propertyDescriptor.getReadMethod();
-    if(getter == null){
+    if (getter == null) {
       return "";
     }
     return getter.isAnnotationPresent(Id.class)
         ? ",\nPRIMARY KEY (" + columnName + ")" : "";
   }
 
-  static <R extends Repository<?, ?>> R createRepository(Class<R> repositoryClass){
+  static <R extends Repository<?, ?>> R createRepository(Class<R> repositoryClass) {
     Objects.requireNonNull(repositoryClass);
-
     return repositoryClass.cast(Proxy.newProxyInstance(
         repositoryClass.getClassLoader(),
-        new Class<?>[] {repositoryClass},
+        new Class<?>[]{repositoryClass},
         (_, method, args) -> {
           var connection = currentConnection();
-          if(method.getDeclaringClass() == Object.class) {
+          if (method.getDeclaringClass() == Object.class) {
             throw new UnsupportedOperationException("CHEH");
           }
-          return switch (method.getName()){
+          return switch (method.getName()) {
             case "toString", "hashCode", "equals" -> throw new UnsupportedOperationException("CHEH");
-            case "findAll" -> new ArrayList<>();
+            case "findAll" -> {
+              var beanType = findBeanTypeFromRepository(repositoryClass);
+              var beanInfo = Utils.beanInfo(beanType);
+              var constructor = Utils.defaultConstructor(beanType);
+              var tableName = findTableName(beanType);
+              try {
+                yield findAll(
+                    connection,
+                    "SELECT * FROM " + tableName,
+                    beanInfo,
+                    constructor);
+              } catch (SQLException e) {
+                throw new UncheckedSQLException(e);
+              }
+            }
             default -> throw new IllegalStateException("Unknwown method name: " + method.getName());
           };
-    }));
+        }));
   }
 
-  private static Object toEntityClass(ResultSet resultSet, BeanInfo beanInfo, Constructor<?> constructor) {
-    // TODO: call the constructor i think nt sure
+  static Object toEntityClass(ResultSet resultSet, BeanInfo beanInfo, Constructor<?> constructor) throws SQLException {
+    var instance = Utils.newInstance(constructor);
+    for (var property : beanInfo.getPropertyDescriptors()) {
+      if (property.getName().equals("class")) {
+        continue;
+      }
+      var setter = property.getWriteMethod();
+      if (setter == null) {
+        continue;
+      }
+      var columnName = findColumnName(property);
+      var value = resultSet.getObject(columnName);
+      Utils.invokeMethod(instance, setter, value);
+    }
+    return instance;
   }
 
-  private static Object findAll(Connection connection, String sqlQuery, BeanInfo beanInfo, Constructor<?> constructor) throws SQLException{
-    try(var statement = connection.createStatement()) {
-      var resultSet = statement.executeQuery(sqlQuery);
-      return ORM.toEntityClass(resultSet, beanInfo, constructor);
+  static List<?> findAll(Connection connection, String sqlQuery, BeanInfo beanInfo, Constructor<?> constructor) throws SQLException {
+    var result = new ArrayList<>();
+    try (var statement = connection.prepareStatement(sqlQuery);
+         var resultSet = statement.executeQuery()) {
+        while (resultSet.next()) {
+          result.add(toEntityClass(resultSet, beanInfo, constructor));
+        }
+    }
+    return result;
   }
+}
